@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
     # LOSS FUNCTION
     # first KL term in Eqn. 10 in the paper. Acts as a regularization on latent variables.
-    ll_bound_kl_term = 0.5 * (1. + T.sum(2. * sigma) -
+    ll_bound_kl_term = 0.5 * (mu.shape[0]*mu.shape[1] + T.sum(2. * sigma) -
                               T.sum(T.square(mu)) -
                               T.sum(T.exp(2. * sigma))) / minibatch_size
 
